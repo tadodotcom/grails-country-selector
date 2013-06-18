@@ -1,6 +1,9 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+.classpath
+.project
+.iml
+.settings
+plugin.xml
+target
+web-app/WEB-INF
+*.log
+grails-country-selector*.zip
