@@ -1,6 +1,7 @@
 .classpath
 .project
-.iml
+*.iml
+.idea
 .settings
 plugin.xml
 target
