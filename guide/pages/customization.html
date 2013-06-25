@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>2.1.1 Countries Customization in i18n 0.1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/configuration.html"><strong>2</strong><span>Configuration</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/utility.html"><strong>3</strong><span>Utility Clases</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/autocomplete.html"><strong>4</strong><span>Autocomplete</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>Provides an advanced country selector in your grails application.</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/introduction.html">&lt;&lt; <strong>1</strong><span>Introduction</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/utility.html"><strong>3</strong><span>Utility Clases</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>2.1.1 Countries Customization in i18n - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Matouš Kučera</p>
+
+                    <p><strong>Version:</strong> 0.1</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="customization">2.1.1 Countries Customization in i18n</h2>
+The structure of i18n country properties is following:<p class="paragraph"/><div class="code"><pre>org.grails.plugin.countrySelector.CZE=Czech Republic
+org.grails.plugin.countrySelector.CZE.alternatives=CZ Česká Ceska
+org.grails.plugin.countrySelector.CZE.relevancy=1.5<p class="paragraph"/>org.grails.plugin.countrySelector.DNK=Denmark
+org.grails.plugin.countrySelector.DNK.alternatives=DK Danmark
+org.grails.plugin.countrySelector.DNK.relevancy=1.5</pre></div><p class="paragraph"/>The country code is the last part of the first property key, the value specifies the country name. Alternatives are comma separated alternative names. Similarly relevancy is used for country position in the country selector.<p class="paragraph"/>By default custom property files are merged with the plugin specified. You can set all country specifiactions (name, alternatives, relevancy) or just few of them. The custom specification has higher priority during merging. Similarly, new countries could be defined if it's needed.<p class="paragraph"/>You can also decide to use your custom i18n settings by default (for example, this can be used when you would like to define custom country codes, or just reduce the number of possible countries). Set following in Config.groovy
+<div class="code"><pre>grails.plugin.countrySelector.messageSource.useOnlyCustom = <span class="java&#45;keyword">true</span></pre></div>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/introduction.html">&lt;&lt; <strong>1</strong><span>Introduction</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/utility.html"><strong>3</strong><span>Utility Clases</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                    <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Tags</h1><div class="menu-sub">
+                        
+                            
+                            <div class="menu-item"><a href="../../ref/Tags/countrySelector.html">countrySelector</a>
+                            </div>
+                            
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

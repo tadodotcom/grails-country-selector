@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <title>Country Selector Plugin 0.1</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8" />
+        <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
+    <script type="text/javascript">
+function addJsClass(el) {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+    </head>
+
+    <body class="body" onload="addJsClass();">
+        <div id="navigation">
+            <ul>
+                <li>
+                    <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                        <a href="../guide/index.html" class="button">Table of contents</a>
+                        <div id="nav-summary-childs" style="display:none;">
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="#configuration"><strong>2</strong><span>Configuration</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="#utility"><strong>3</strong><span>Utility Clases</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="#autocomplete"><strong>4</strong><span>Autocomplete</span></a></div>
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="separator selected">
+                    <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+                </li>
+            </ul>
+        </div>
+        <div id="header">
+            <div class="images clearfix">
+                
+                
+            </div>
+            <p>Provides an advanced country selector in your grails application.</p>
+        </div>
+
+
+        <table id="colset" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td id="col1">
+                    <div id="main" class="corner-all">
+
+                        <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                        <div class="project">
+                            <h1>Country Selector Plugin - Reference Documentation</h1>
+                            <p><strong>Authors:</strong> Matouš Kučera</p>
+                            <p><strong>Version:</strong> 0.1</p>
+                            
+                        </div>
+
+                        
+                        <div id="table-of-content">
+                            <h2>Table of Contents</h2>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#changes"><strong>1.1</strong><span>Change Log</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#roadmap"><strong>1.2</strong><span>Roadmap</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#configuration"><strong>2</strong><span>Configuration</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#countries_i18n"><strong>2.1</strong><span>Countries i18n</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="#customization"><strong>2.1.1</strong><span>Countries Customization in i18n</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="#supportedLanguages"><strong>2.1.2</strong><span>Supported Languages</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#utility"><strong>3</strong><span>Utility Clases</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#countrySelectorService"><strong>3.1</strong><span>CountrySelectorService</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#autocomplete"><strong>4</strong><span>Autocomplete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#jQueryAutocomplete"><strong>4.1</strong><span>jQuery Autocomplete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#twitterAutocomplete"><strong>4.2</strong><span>Twitter Bootstrap Autocomplete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="#customAutocomplete"><strong>4.3</strong><span>Custom Autocomplete</span></a></div>
+                            
+                            <div style="clear:both" ></div>
+                        </div>
+                        
+                        
+
+<h1 id="introduction">1 Introduction</h1>
+This plugin provides advanced country selector for Grails. It uses JavaScript autocomplete to give the user right help. The autocomplete help takes into account country name alternatives and different relevance for different countries (see <a href="../guide/single.html#countries_i18n" class="guide">Countries i18n</a> chapter). Moreover, it allows i18n localization of country names, alternatives and also relevancy.<p class="paragraph"/>The plugin is based on JavaScript implementation of country selector of <a href="http://baymard.com/" target="blank">Baymard Institute</a>, see project Github <a href="https://github.com/JamieAppleseed/selectToAutocomplete" target="blank"></a>.
+
+
+<h2 id="changes">1.1 Change Log</h2>
+<ul class="star">
+<li><strong class="bold">0.1</strong></li>
+<ul class="star">
+<li>Smart country selector - &#60;cs:countrySelector /&#62; tag</li>
+<li>jQuery autocomplete implementation</li>
+<li>Twitter Bootstrap autocomplete implementation</li>
+<li>Country setup in i18n</li>
+</ul></ul><p class="paragraph"/>
+
+
+<h2 id="roadmap">1.2 Roadmap</h2>
+<ul class="star">
+<li>Cashing of parsed i18n country codes</li>
+<li>Translations to DE/CZ</li>
+</ul><p class="paragraph"/>
+
+
+<h1 id="configuration">2 Configuration</h1>
+There are a few configuration options for the plugin:
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th><strong class="bold">Name</strong></th><th><strong class="bold">Default</strong></th><th><strong class="bold">Description</strong></th></tr><tr class="table-odd"><td>grails.plugin.countrySelector.messageSource.useOnlyCustom</td><td>false</td><td>True if only custom i18n country settings should be used. See more in customization</td></tr></table>
+
+
+<h2 id="countries_i18n">2.1 Countries i18n</h2>
+The plugin is dependent on i18n Grails plugin and allows to set all language/location properties needed for country selector. Therefore, simply changing the user locale can change the country selector behavior.<p class="paragraph"/>It allows to set-up following properties for each country:
+<ol>
+<li><strong class="bold">Country Code</strong> - Plugin uses <a href="http://en.wikipedia.org/wiki/ISO_3166-1" target="blank">ISO 3166-1 alpha-3</a> codes for countries but you can use set your own. Country codes are the values returned when the user submit the country selector. They could be easily mapped to domain class property. Examples:  <em class="italic">GBR</em> ,  <em class="italic">DEU</em> , etc.</li>
+<li><strong class="bold">Country Name</strong> - It is the actual country name the user sees in autocomplete. Examples:  <em class="italic">United Kingdom</em> ,  <em class="italic">Germany</em> , etc.</li>
+<li><strong class="bold">Country Alternatives</strong> - Alternative strings which should be used for autocomplete. When the user starts to type an alternative he should receive a proper country name. Examples:  <em class="italic">GB Great Britain England UK Wales Scotland Northern Ireland</em>  for United Kingdom,  <em class="italic">DE Bundesrepublik Deutschland</em>  for Germany.</li>
+<li><strong class="bold">Relevancy</strong> - The relevancy specifies the order of results in autocomplete. Country selector sorts the countries by their relevancy first (higher relevancy ~ higher position in autocomplete) and than alphabetically. Examples: United States relevancy  <em class="italic">3.5</em> , United Kingdom relevancy  <em class="italic">2.5</em> </li>
+</ol><p class="paragraph"/>
+
+
+<h2 id="customization">2.1.1 Countries Customization in i18n</h2>
+The structure of i18n country properties is following:<p class="paragraph"/><div class="code"><pre>org.grails.plugin.countrySelector.CZE=Czech Republic
+org.grails.plugin.countrySelector.CZE.alternatives=CZ Česká Ceska
+org.grails.plugin.countrySelector.CZE.relevancy=1.5<p class="paragraph"/>org.grails.plugin.countrySelector.DNK=Denmark
+org.grails.plugin.countrySelector.DNK.alternatives=DK Danmark
+org.grails.plugin.countrySelector.DNK.relevancy=1.5</pre></div><p class="paragraph"/>The country code is the last part of the first property key, the value specifies the country name. Alternatives are comma separated alternative names. Similarly relevancy is used for country position in the country selector.<p class="paragraph"/>By default custom property files are merged with the plugin specified. You can set all country specifiactions (name, alternatives, relevancy) or just few of them. The custom specification has higher priority during merging. Similarly, new countries could be defined if it's needed.<p class="paragraph"/>You can also decide to use your custom i18n settings by default (for example, this can be used when you would like to define custom country codes, or just reduce the number of possible countries). Set following in Config.groovy
+<div class="code"><pre>grails.plugin.countrySelector.messageSource.useOnlyCustom = <span class="java&#45;keyword">true</span></pre></div>
+
+
+
+<h2 id="supportedLanguages">2.1.2 Supported Languages</h2>
+English is currently the only one supported language by the plugin. The whole setup of country names, alternative and relevancy is in  <em class="italic">i18n/messages.properties</em>  file of the plugin core.
+
+
+<h1 id="utility">3 Utility Clases</h1>
+
+
+
+<h2 id="countrySelectorService">3.1 CountrySelectorService</h2>
+<strong class="bold">allowedCountryCodes()</strong>
+This method allows to get all allowed country codes. It can be used for constraints in domain class.<p class="paragraph"/>Example domain class Address.groovy
+<div class="code"><pre>class Address &#123;
+   def countrySelectorService<p class="paragraph"/>   <span class="java&#45;object">String</span> country<p class="paragraph"/>   <span class="java&#45;keyword">static</span> constraints = &#123;
+      country(nullable: <span class="java&#45;keyword">false</span>, blank: <span class="java&#45;keyword">false</span>, validator: &#123;val, obj &#45;&#62;
+               def allowedCountryCodes = countrySelectorService.allowedCountryCodes()
+               <span class="java&#45;keyword">if</span>(!allowedCountryCodes.contains(val))
+                  <span class="java&#45;keyword">return</span> <span class="java&#45;quote">"org.grails.plugins.countrySelector.country.notAllowed"</span>
+            &#125;)
+   &#125;
+&#125;</pre></div>
+
+
+<h1 id="autocomplete">4 Autocomplete</h1>
+JavaScript autocomplete engine is an important part of this plugin. It allows the user to see the recommended countries while he is typing. By default, the jQueryAutocomplete is used by the plugin.
+
+
+<h2 id="jQueryAutocomplete">4.1 jQuery Autocomplete</h2>
+<a href="http://jqueryui.com/autocomplete/" target="blank">jQuery autocomplete</a> is the default autocomplete. Therefore, this plugin depends on <a href="http://grails.org/plugin/jquery-ui" target="blank">jquery-ui</a> plugin.<p class="paragraph"/>If you don't want to use this autocomplete and jquery-ui dependency than simply exclude it from BuildConfig.groovy:
+<div class="code"><pre>compile ':country&#45;selector:0.1' &#123;
+   exclude 'jquery&#45;ui'
+&#125;</pre></div>
+
+
+<h2 id="twitterAutocomplete">4.2 Twitter Bootstrap Autocomplete</h2>
+The <a href="http://twitter.github.io/bootstrap/javascript.html#typeahead" target="blank">Twitter Bootstrap Autocomplete</a> is an alternative implemented within the plugin.<p class="paragraph"/>You can set this implementation using the resources (<a href="http://grails.org/plugin/resources" target="blank">Resource Plugin</a>) in ApplicationResources.groovy:
+<div class="code"><pre>overrides &#123;
+   'country&#45;selector&#45;plugin&#45;js' &#123;
+      dependsOn 'country&#45;selector&#45;plugin&#45;bootstrap&#45;js'
+   &#125;
+&#125;</pre></div><p class="paragraph"/>The Twitter Bootstrap country selector is dependent on  <em class="italic">bootstrap-typeahead</em>  therefore Twitter Bootstrap Grails Plugin is required:
+<div class="code"><pre>plugins &#123;
+…
+    runtime ':twitter&#45;bootstrap:2.3.2'
+…
+&#125;</pre></div>
+
+
+<h2 id="customAutocomplete">4.3 Custom Autocomplete</h2>
+Similarly to Twitter Bootstrap Autocomplete you can set your custom autocomplete JavaScript implementation in ApplicationResources.groovy:
+<div class="code"><pre>'country&#45;selector&#45;plugin&#45;custom&#45;js' &#123;
+   dependsOn 'jquery'
+   resource url: 'js/application/customCountrySelectorAutocomplete.js', disposition: 'head'
+&#125;<p class="paragraph"/>overrides &#123;
+   'country&#45;selector&#45;plugin&#45;js' &#123;
+      dependsOn 'country&#45;selector&#45;plugin&#45;custom&#45;js'
+   &#125;
+&#125;</pre></div><p class="paragraph"/>The custom JavaScript autocomplete should follow the implementation of Baymard Institute JavaScript country selector (See <a href="https://github.com/JamieAppleseed/selectToAutocomplete" target="blank">Github</a> for more details).
+
+                    </div>
+                </td>
+                <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                    <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Tags</h1><div class="menu-sub">
+                        
+                        
+                        <div class="menu-item"><a href="../ref/Tags/countrySelector.html">countrySelector</a>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </td>
+            </tr>
+        </table>
+
+        <div id="footer">
+            
+            
+        </div>
+
+
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+    </body>
+</html>
