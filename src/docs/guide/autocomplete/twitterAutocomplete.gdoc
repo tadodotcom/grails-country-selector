@@ -1,0 +1,10 @@
+The [Twitter Bootstrap Autocomplete|http://twitter.github.io/bootstrap/javascript.html#typeahead] is an alternative implemented within the plugin.
+
+You can set this implementation using the resources ([Resource Plugin|http://grails.org/plugin/resources]) in ApplicationResources.groovy:
+{code}
+overrides {
+   'country-selector-plugin-js' {
+      dependsOn 'country-selector-plugin-bootstrap-js'
+   }
+}
+{code}

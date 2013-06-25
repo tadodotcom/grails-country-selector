@@ -1,3 +1,5 @@
+import org.grails.plugins.countrySelector.SearchResourceBundleMessageSource
+
 class CountrySelectorGrailsPlugin {
    def version = "0.1"
    def grailsVersion = "2.0 > *"
@@ -16,4 +18,7 @@ class CountrySelectorGrailsPlugin {
    def issueManagement = [system: "Github", url: "https://github.com/EnergyBob/grails-country-selector/issues"]
 
    def scm = [url: "https://github.com/EnergyBob/grails-country-selector"]
+
+   def dependsOn = [i18n: "* > 1.0"]
+
 }

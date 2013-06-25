@@ -1,0 +1,19 @@
+introduction:
+  title: Introduction
+  changes: Change Log
+  roadmap: Roadmap
+configuration:
+  title: Configuration
+  countries_i18n:
+    title: Countries i18n
+    customization:
+      title: Countries Customization in i18n
+    supportedLanguages: Supported Languages
+utility:
+  title: Utility Clases
+  countrySelectorService: CountrySelectorService
+autocomplete:
+  title: Autocomplete
+  jQueryAutocomplete: jQuery Autocomplete
+  twitterAutocomplete: Twitter Bootstrap Autocomplete
+  customAutocomplete: Custom Autocomplete

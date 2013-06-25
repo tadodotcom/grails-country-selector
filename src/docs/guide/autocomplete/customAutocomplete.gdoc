@@ -1,0 +1,15 @@
+Similarly to Twitter Bootstrap Autocomplete you can set your custom autocomplete JavaScript implementation in ApplicationResources.groovy:
+{code}
+'country-selector-plugin-custom-js' {
+   dependsOn 'jquery'
+   resource url: 'js/application/customCountrySelectorAutocomplete.js', disposition: 'head'
+}
+
+overrides {
+   'country-selector-plugin-js' {
+      dependsOn 'country-selector-plugin-custom-js'
+   }
+}
+{code}
+
+The custom JavaScript autocomplete should follow the implementation of Baymard Institute JavaScript country selector (See [Github|https://github.com/JamieAppleseed/selectToAutocomplete] for more details).

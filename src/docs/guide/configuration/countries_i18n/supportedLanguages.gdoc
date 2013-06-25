@@ -1,0 +1,1 @@
+English is currently the only one supported language by the plugin. The whole setup of country names, alternative and relevancy is in _i18n/messages.properties_ file of the plugin core.

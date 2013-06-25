@@ -1,0 +1,5 @@
+There are a few configuration options for the plugin:
+{table}
+ *Name* | *Default* | *Description*
+ grails.plugin.countrySelector.messageSource.useOnlyCustom | false | True if only custom i18n country settings should be used. See more in [Countries Customization in i18n|customization]
+{table}

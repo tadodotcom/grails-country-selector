@@ -1,0 +1,5 @@
+* *0.1*
+** Smart country selector - <cs:countrySelector /> tag
+** jQuery autocomplete implementation
+** Twitter Bootstrap autocomplete implementation
+** Country setup in i18n

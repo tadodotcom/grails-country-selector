@@ -1,0 +1,3 @@
+This plugin provides advanced country selector for Grails. It uses JavaScript autocomplete to give the user right help. The autocomplete help takes into account country name alternatives and different relevance for different countries (see [Countries i18n|guide:countries_i18n] chapter). Moreover, it allows i18n localization of country names, alternatives and also relevancy.
+
+The plugin is based on JavaScript implementation of country selector of [Baymard Institute|http://baymard.com/], see project Github [https://github.com/JamieAppleseed/selectToAutocomplete].

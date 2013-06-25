@@ -1,0 +1,19 @@
+*allowedCountryCodes()*
+This method allows to get all allowed country codes. It can be used for constraints in domain class.
+
+Example domain class Address.groovy
+{code}
+class Address {
+   def countrySelectorService
+
+   String country
+
+   static constraints = {
+      country(nullable: false, blank: false, validator: {val, obj ->
+               def allowedCountryCodes = countrySelectorService.allowedCountryCodes()
+               if(!allowedCountryCodes.contains(val))
+                  return "org.grails.plugins.countrySelector.country.notAllowed"
+            })
+   }
+}
+{code}

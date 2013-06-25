@@ -1,0 +1,8 @@
+[jQuery autocomplete|http://jqueryui.com/autocomplete/] is the default autocomplete. Therefore, this plugin depends on [jquery-ui|http://grails.org/plugin/jquery-ui] plugin.
+
+If you don't want to use this autocomplete and jquery-ui dependency than simply exclude it from BuildConfig.groovy:
+{code}
+compile ':country-selector:0.1' {
+   exclude 'jquery-ui'
+}
+{code}

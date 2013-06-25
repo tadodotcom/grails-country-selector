@@ -1,0 +1,8 @@
+h1. cs:countrySelector Tag
+
+This tags allows to place the actual country selector into your gsp or better inside a form. When the form is submitted, it sends the country code of the country selected by user to the server.
+
+h2. Attributes
+
+* name - Unique name of the country selector
+* value - Optional. Value of the selected country - country code
