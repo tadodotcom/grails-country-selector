@@ -8,3 +8,12 @@ overrides {
    }
 }
 {code}
+
+The Twitter Bootstrap country selector is dependent on _bootstrap-typeahead_ therefore Twitter Bootstrap Grails Plugin is required:
+{code}
+plugins {
+…
+    runtime ':twitter-bootstrap:2.3.2'
+…
+}
+{code}
