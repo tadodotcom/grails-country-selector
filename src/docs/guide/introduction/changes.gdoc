@@ -1,5 +1,4 @@
-* *0.1*
-** Smart country selector - <cs:countrySelector /> tag
-** jQuery autocomplete implementation
-** Twitter Bootstrap autocomplete implementation
-** Country setup in i18n
+{table}
+Date | Version | Notes
+2013-07-01 | 0.1 | Smart country selector - <cs:countrySelector /> tag. jQuery autocomplete implementation. Twitter Bootstrap autocomplete implementation. Country setup in i18n.
+{table}
