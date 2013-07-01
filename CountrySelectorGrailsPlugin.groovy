@@ -9,7 +9,7 @@ class CountrySelectorGrailsPlugin {
    def authorEmail = "matous.kucera@tado.com"
    def description = "Provides an advanced country selector in your grails application."
 
-   def documentation = "http://deigote.github.io/grails-timestamped/"
+   def documentation = "energybob.github.io/grails-country-selector"
 
    def license = "GPL3"
 
