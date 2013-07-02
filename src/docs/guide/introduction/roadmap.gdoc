@@ -1,2 +1,3 @@
 * Cashing of parsed i18n country codes
-* Translations to DE/CZ
+* Translations to CZ
+* Tag for resolving the country name based on country code, plugin settings and locale
