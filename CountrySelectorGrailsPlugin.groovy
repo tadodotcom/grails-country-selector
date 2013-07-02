@@ -7,11 +7,7 @@ class CountrySelectorGrailsPlugin {
    def title = "Country Selector Plugin"
    def author = "Matouš Kučera"
    def authorEmail = "matous.kucera@tado.com"
-   def description = """
-Provides an advanced country selector in your grails application.
-
-Tag for rendering an input with smart autocomplete feature based on country names, name alternatives and relevance. Full localization and custom settings supported.
-"""
+   def description = "An advanced country selector in your grails application."
 
    def documentation = "http://energybob.github.io/grails-country-selector"
 
