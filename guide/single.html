@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
-        <title>Country Selector Plugin 0.1</title>
+        <title>Country Selector Plugin 0.2</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8" />
         <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
@@ -44,7 +44,11 @@ function addJsClass(el) {
                 
                 
             </div>
-            <p>Provides an advanced country selector in your grails application.</p>
+            <p>
+Provides an advanced country selector in your grails application.
+
+Tag for rendering an input with smart autocomplete feature based on country names, name alternatives and relevance. Full localization and custom settings supported.
+</p>
         </div>
 
 
@@ -58,7 +62,7 @@ function addJsClass(el) {
                         <div class="project">
                             <h1>Country Selector Plugin - Reference Documentation</h1>
                             <p><strong>Authors:</strong> Matouš Kučera</p>
-                            <p><strong>Version:</strong> 0.1</p>
+                            <p><strong>Version:</strong> 0.2</p>
                             
                         </div>
 
@@ -102,13 +106,14 @@ This plugin provides advanced country selector for Grails. It uses JavaScript au
 
 
 <h2 id="changes">1.1 Change Log</h2>
-<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Date</th><th>Version</th><th>Notes</th></tr><tr class="table-odd"><td>2013-07-01</td><td>0.1</td><td>Smart country selector - &#60;cs:countrySelector /&#62; tag. jQuery autocomplete implementation. Twitter Bootstrap autocomplete implementation. Country setup in i18n.</td></tr></table>
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Date</th><th>Version</th><th>Notes</th></tr><tr class="table-odd"><td>2013-07-02</td><td>0.2</td><td>Bug fixes. German translation.</td></tr><tr class="table-even"><td>2013-07-01</td><td>0.1</td><td>Smart country selector - &#60;cs:countrySelector /&#62; tag. jQuery autocomplete implementation. Twitter Bootstrap autocomplete implementation. Country setup in i18n.</td></tr></table>
 
 
 <h2 id="roadmap">1.2 Roadmap</h2>
 <ul class="star">
 <li>Cashing of parsed i18n country codes</li>
-<li>Translations to DE/CZ</li>
+<li>Translations to CZ</li>
+<li>Tag for resolving the country name based on country code, plugin settings and locale</li>
 </ul><p class="paragraph"/>
 
 
@@ -151,12 +156,24 @@ This method allows to get all allowed country codes. It can be used for constrai
 <div class="code"><pre>class Address &#123;
    def countrySelectorService<p class="paragraph"/>   <span class="java&#45;object">String</span> country<p class="paragraph"/>   <span class="java&#45;keyword">static</span> constraints = &#123;
       country(nullable: <span class="java&#45;keyword">false</span>, blank: <span class="java&#45;keyword">false</span>, validator: &#123;val, obj &#45;&#62;
-               def allowedCountryCodes = countrySelectorService.allowedCountryCodes()
+               def allowedCountryCodes = obj.countrySelectorService.allowedCountryCodes()
                <span class="java&#45;keyword">if</span>(!allowedCountryCodes.contains(val))
                   <span class="java&#45;keyword">return</span> <span class="java&#45;quote">"org.grails.plugins.countrySelector.country.notAllowed"</span>
             &#125;)
    &#125;
-&#125;</pre></div>
+&#125;</pre></div><p class="paragraph"/><blockquote class="note">
+The Address class is usually an embedded class placed in groovy/src for a certain domain class. To use the countrySelectorService, you need to inject the service differently:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">import</span> grails.util.Holders<p class="paragraph"/>class Address &#123;
+   <span class="java&#45;object">String</span> country<p class="paragraph"/>   <span class="java&#45;keyword">static</span> constraints = &#123;
+      country(nullable: <span class="java&#45;keyword">false</span>, blank: <span class="java&#45;keyword">false</span>, validator: &#123;val, obj &#45;&#62;
+               def allowedCountryCodes = obj.countrySelectorService.allowedCountryCodes()
+               <span class="java&#45;keyword">if</span>(!allowedCountryCodes.contains(val))
+                  <span class="java&#45;keyword">return</span> <span class="java&#45;quote">"org.grails.plugins.countrySelector.country.notAllowed"</span>
+            &#125;)
+   &#125;<p class="paragraph"/>   <span class="java&#45;keyword">private</span> <span class="java&#45;keyword">static</span> getCountrySelectorService() &#123;
+      def grailsApplication = Holders.getGrailsApplication()
+      grailsApplication.mainContext.countrySelectorService
+   &#125;
+&#125;</pre></div><p class="paragraph"/></blockquote>
 
 
 <h1 id="autocomplete">4 Autocomplete</h1>
