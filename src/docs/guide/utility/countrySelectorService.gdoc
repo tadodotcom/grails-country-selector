@@ -10,10 +10,36 @@ class Address {
 
    static constraints = {
       country(nullable: false, blank: false, validator: {val, obj ->
-               def allowedCountryCodes = countrySelectorService.allowedCountryCodes()
+               def allowedCountryCodes = obj.countrySelectorService.allowedCountryCodes()
                if(!allowedCountryCodes.contains(val))
                   return "org.grails.plugins.countrySelector.country.notAllowed"
             })
    }
 }
 {code}
+
+{note}
+The Address class is usually an embedded class placed in groovy/src for a certain domain class. To use the countrySelectorService, you need to inject the service differently:
+
+{code}
+import grails.util.Holders
+
+class Address {
+   String country
+
+   static constraints = {
+      country(nullable: false, blank: false, validator: {val, obj ->
+               def allowedCountryCodes = obj.countrySelectorService.allowedCountryCodes()
+               if(!allowedCountryCodes.contains(val))
+                  return "org.grails.plugins.countrySelector.country.notAllowed"
+            })
+   }
+
+   private static getCountrySelectorService() {
+      def grailsApplication = Holders.getGrailsApplication()
+      grailsApplication.mainContext.countrySelectorService
+   }
+}
+{code}
+
+{note}

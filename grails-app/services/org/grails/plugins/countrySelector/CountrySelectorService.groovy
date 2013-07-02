@@ -8,7 +8,9 @@ class CountrySelectorService {
    def messageSource
    def grailsApplication
 
-   private static final MESSAGE_SOURCE_KEY_START = "org.grails.plugin.countrySelector."
+   private final MESSAGE_SOURCE_KEY_START = "org.grails.plugin.countrySelector."
+
+   static transactional = false
 
    /**
     * Resolves all countries specified in plugin and/or in custom specification.
@@ -23,15 +25,12 @@ class CountrySelectorService {
     *    ]
     * ]
     */
-   def resolveCountries() {
-      def useOnluyCustom = grailsApplication.config.grails.plugin.countrySelector.messageSource.useOnlyCustom ?: false
-      def request = WebUtils.retrieveGrailsWebRequest().currentRequest
-      def locale = RequestContextUtils.getLocale(request)
-
+   def resolveCountries(def locale) {
+      def useOnlyCustom = grailsApplication.config.grails.plugin.countrySelector.messageSource.useOnlyCustom ?: false
       // load all related messages
       def messageSourceMap = SearchResourceBundleMessageSource.listMessageCodes(messageSource, locale, MESSAGE_SOURCE_KEY_START)
       // build the result map
-      def countrySelectorMap = CountryMapBuilder.buildFromMessageSources(messageSourceMap, useOnluyCustom)
+      def countrySelectorMap = CountryMapBuilder.buildFromMessageSources(messageSourceMap, useOnlyCustom)
 
       return countrySelectorMap
    }
@@ -43,10 +42,15 @@ class CountrySelectorService {
     * @return List of allowed country codes
     */
    def allowedCountryCodes() {
+      def useOnlyCustom = grailsApplication.config.grails.plugin.countrySelector.messageSource.useOnlyCustom ?: false
       // load all related messages
-      def messageSourceMap = SearchResourceBundleMessageSource.listMessageCodes(messageSource, locale, MESSAGE_SOURCE_KEY_START)
+      def messageSourceMap = SearchResourceBundleMessageSource.listMessageCodes(messageSource, Locale.getDefault(), MESSAGE_SOURCE_KEY_START)
       // build the result list
-      def countryCodes = CountryMapBuilder.buildFromMessageSources(messageSourceMap, useOnluyCustom)
+      def countryCodesMap = CountryMapBuilder.buildFromMessageSources(messageSourceMap, useOnlyCustom)
+      def countryCodes = []
+      countryCodesMap.countries.each {
+         countryCodes.add(it.key)
+      }
 
       return countryCodes
    }

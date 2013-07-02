@@ -46,7 +46,7 @@ class CountrySelectorTagLib {
       out << "\n"
 
       // build the options
-      def countrySelectorConfig = countrySelectorService.resolveCountries()
+      def countrySelectorConfig = countrySelectorService.resolveCountries(RCU.getLocale(request))
       if(countrySelectorConfig.countries) {
          countrySelectorConfig.countries.each {entryName, countryProperties ->
             out << "<option value='$entryName' "
