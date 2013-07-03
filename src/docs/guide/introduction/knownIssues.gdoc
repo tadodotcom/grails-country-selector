@@ -1,0 +1,1 @@
+* Grails 2.2.2 - [Plugin i18n Resources Problem|http://jira.grails.org/browse/GRAILS-10058] causes that plugin i18n configuration is not loaded.

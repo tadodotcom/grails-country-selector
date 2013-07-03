@@ -2,6 +2,7 @@ introduction:
   title: Introduction
   changes: Change Log
   roadmap: Roadmap
+  knownIssues: Known Issues
 configuration:
   title: Configuration
   countries_i18n:
