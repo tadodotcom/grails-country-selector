@@ -1,7 +1,7 @@
 import org.grails.plugins.countrySelector.SearchResourceBundleMessageSource
 
 class CountrySelectorGrailsPlugin {
-   def version = "0.2.5"
+   def version = "0.2.6"
    def grailsVersion = "2.0 > *"
 
    def title = "Country Selector Plugin"

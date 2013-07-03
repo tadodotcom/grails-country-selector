@@ -25,9 +25,8 @@ class SearchResourceBundleMessageSource {
       // NOTE: Access protected methods of messageSource implementation which is allowed in Groovy. Extending the PluginAwareResourceBundleMessageSource
       // class and registering this class as a messageSource bean is possible but requires setting of all bean properties which are set
       // by the i18n plugin
-      Properties properties = messageSource.getMergedProperties(locale).getProperties()
-      properties.plus(messageSource.getMergedPluginProperties(locale).getProperties())
+      def mergedProperties = messageSource.getMergedProperties(locale).getProperties() + messageSource.getMergedPluginProperties(locale).getProperties()
 
-      return properties.findAll { it.key.startsWith(keyStart) }
+      return mergedProperties.findAll { it.key.startsWith(keyStart) }
    }
 }
