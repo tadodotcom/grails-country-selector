@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>1 Introduction 0.2</title>
+    <title>1 Introduction 0.2.5</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -72,7 +72,7 @@ function addJsClass() {
 
                     <p><strong>Authors:</strong> Matouš Kučera</p>
 
-                    <p><strong>Version:</strong> 0.2</p>
+                    <p><strong>Version:</strong> 0.2.5</p>
 
                     
                 </div>
@@ -87,6 +87,9 @@ function addJsClass() {
                     <div class="toc-item" style="margin-left:0px"><a href="#roadmap"><strong>1.2</strong><span>Roadmap</span></a>
                     </div>
                     
+                    <div class="toc-item" style="margin-left:0px"><a href="#knownIssues"><strong>1.3</strong><span>Known Issues</span></a>
+                    </div>
+                    
                 </div>
                 
 
@@ -97,7 +100,7 @@ This plugin provides advanced country selector for Grails. It uses JavaScript au
 
 
 <h2 id="changes">1.1 Change Log</h2>
-<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Date</th><th>Version</th><th>Notes</th></tr><tr class="table-odd"><td>2013-07-02</td><td>0.2</td><td>Bug fixes. German translation.</td></tr><tr class="table-even"><td>2013-07-01</td><td>0.1</td><td>Smart country selector - &#60;cs:countrySelector /&#62; tag. jQuery autocomplete implementation. Twitter Bootstrap autocomplete implementation. Country setup in i18n.</td></tr></table>
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Date</th><th>Version</th><th>Notes</th></tr><tr class="table-odd"><td>2013-07-03</td><td>0.2.5</td><td>Improved dependencies. Resource plugin is not required by default</td></tr><tr class="table-even"><td>2013-07-02</td><td>0.2</td><td>Bug fixes. German translation.</td></tr><tr class="table-odd"><td>2013-07-01</td><td>0.1</td><td>Smart country selector - &#60;cs:countrySelector /&#62; tag. jQuery autocomplete implementation. Twitter Bootstrap autocomplete implementation. Country setup in i18n.</td></tr></table>
 
 
 <h2 id="roadmap">1.2 Roadmap</h2>
@@ -105,6 +108,12 @@ This plugin provides advanced country selector for Grails. It uses JavaScript au
 <li>Cashing of parsed i18n country codes</li>
 <li>Translations to CZ</li>
 <li>Tag for resolving the country name based on country code, plugin settings and locale</li>
+</ul><p class="paragraph"/>
+
+
+<h2 id="knownIssues">1.3 Known Issues</h2>
+<ul class="star">
+<li>Grails 2.2.2 - <a href="http://jira.grails.org/browse/GRAILS-10058" target="blank">Plugin i18n Resources Problem</a> causes that plugin i18n configuration is not loaded.</li>
 </ul><p class="paragraph"/>
 
 
