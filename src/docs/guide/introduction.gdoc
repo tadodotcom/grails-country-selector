@@ -5,4 +5,5 @@ It uses JavaScript autocomplete to give the user right help. The autocomplete ta
 The plugin is based on JavaScript implementation of country selector of [Baymard Institute|http://baymard.com/], see project on [Github|https://github.com/JamieAppleseed/selectToAutocomplete].
 
 Example of rendered country selector:
+
 !country-selector.png!
