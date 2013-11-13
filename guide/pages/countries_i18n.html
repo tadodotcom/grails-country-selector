@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>2.1 Countries i18n 0.2.6</title>
+    <title>2.1 Countries i18n 1.0</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -49,7 +49,7 @@ function addJsClass() {
         
         
     </div>
-    <p>An advanced country selector in your grails application.</p>
+    <p>Advanced country selector for forms.</p>
 </div>
 
 
@@ -74,7 +74,7 @@ function addJsClass() {
 
                     <p><strong>Authors:</strong> Matouš Kučera</p>
 
-                    <p><strong>Version:</strong> 0.2.6</p>
+                    <p><strong>Version:</strong> 1.0</p>
 
                     
                 </div>
@@ -97,11 +97,11 @@ function addJsClass() {
 <h2 id="countries_i18n">2.1 Countries i18n</h2>
 The plugin is dependent on i18n Grails plugin and allows to set all language/location properties needed for country selector. Therefore, simply changing the user locale can change the country selector behavior.<p class="paragraph"/>It allows to set-up following properties for each country:
 <ol>
-<li><strong class="bold">Country Code</strong> - Plugin uses <a href="http://en.wikipedia.org/wiki/ISO_3166-1" target="blank">ISO 3166-1 alpha-3</a> codes for countries but you can use set your own. Country codes are the values returned when the user submit the country selector. They could be easily mapped to domain class property. Examples:  <em class="italic">GBR</em> ,  <em class="italic">DEU</em> , etc.</li>
+<li><strong class="bold">Country Code</strong> - Plugin uses <a href="http://en.wikipedia.org/wiki/ISO_3166-1" target="blank">ISO 3166-1 alpha-3</a> codes for countries but you can set your own. Country codes are the values returned when the user submit the country selector. They could be easily mapped to domain class property. Examples:  <em class="italic">GBR</em> ,  <em class="italic">DEU</em> , etc.</li>
 <li><strong class="bold">Country Name</strong> - It is the actual country name the user sees in autocomplete. Examples:  <em class="italic">United Kingdom</em> ,  <em class="italic">Germany</em> , etc.</li>
-<li><strong class="bold">Country Alternatives</strong> - Alternative strings which should be used for autocomplete. When the user starts to type an alternative he should receive a proper country name. Examples:  <em class="italic">GB Great Britain England UK Wales Scotland Northern Ireland</em>  for United Kingdom,  <em class="italic">DE Bundesrepublik Deutschland</em>  for Germany.</li>
+<li><strong class="bold">Country Alternatives</strong> - Alternative strings which should be used for autocomplete. When the user starts typing an alternative he should receive a proper country name. Examples:  <em class="italic">GB Great Britain England UK Wales Scotland Northern Ireland</em>  for United Kingdom,  <em class="italic">DE Bundesrepublik Deutschland</em>  for Germany.</li>
 <li><strong class="bold">Relevancy</strong> - The relevancy specifies the order of results in autocomplete. Country selector sorts the countries by their relevancy first (higher relevancy ~ higher position in autocomplete) and than alphabetically. Examples: United States relevancy  <em class="italic">3.5</em> , United Kingdom relevancy  <em class="italic">2.5</em> </li>
-</ol><p class="paragraph"/>
+</ol><p class="paragraph"/>Having these properties in i18n allows to set different values for different locale. It allows for example to set a different relevancy for different locale, i.e. Sweden would have higher relevancy than Switzerland in Sweden locale but this would be vice versa for Switzerland locale.
 
 
 <h2 id="customization">2.1.1 Countries Customization in i18n</h2>
@@ -109,13 +109,13 @@ The structure of i18n country properties is following:<p class="paragraph"/><div
 org.grails.plugin.countrySelector.CZE.alternatives=CZ Česká Ceska
 org.grails.plugin.countrySelector.CZE.relevancy=1.5<p class="paragraph"/>org.grails.plugin.countrySelector.DNK=Denmark
 org.grails.plugin.countrySelector.DNK.alternatives=DK Danmark
-org.grails.plugin.countrySelector.DNK.relevancy=1.5</pre></div><p class="paragraph"/>The country code is the last part of the first property key, the value specifies the country name. Alternatives are comma separated alternative names. Similarly relevancy is used for country position in the country selector.<p class="paragraph"/>By default custom property files are merged with the plugin specified. You can set all country specifiactions (name, alternatives, relevancy) or just few of them. The custom specification has higher priority during merging. Similarly, new countries could be defined if it's needed.<p class="paragraph"/>You can also decide to use your custom i18n settings by default (for example, this can be used when you would like to define custom country codes, or just reduce the number of possible countries). Set following in Config.groovy
+org.grails.plugin.countrySelector.DNK.relevancy=1.5</pre></div><p class="paragraph"/>The country code is the last part of the first property key, the value specifies the country name. Alternatives are space separated names. Similarly, relevancy is used for country position in the country selector.<p class="paragraph"/>By default custom property files are merged with the plugin specified. You can set all country specifiactions (name, alternatives, relevancy) or just few of them. The custom specification has higher priority during merging. New countries could be defined if it is required.<p class="paragraph"/>You can also decide to use your custom i18n settings by default (for example, this can be used when you would like to define custom country codes, or just reduce the number of possible countries). Set following in Config.groovy
 <div class="code"><pre>grails.plugin.countrySelector.messageSource.useOnlyCustom = <span class="java&#45;keyword">true</span></pre></div>
 
 
 
 <h2 id="supportedLanguages">2.1.2 Supported Languages</h2>
-English is currently the only one supported language by the plugin. The whole setup of country names, alternative and relevancy is in  <em class="italic">i18n/messages.properties</em>  file of the plugin core.
+English ang Germany are the only one supported languages right now. The whole setup of country names, alternative and relevancy is in  <em class="italic">i18n/messages.properties</em>  file of the plugin core.
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -137,6 +137,9 @@ English is currently the only one supported language by the plugin. The whole se
                     
                     <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Tags</h1><div class="menu-sub">
                         
+                            
+                            <div class="menu-item"><a href="../../ref/Tags/country.html">country</a>
+                            </div>
                             
                             <div class="menu-item"><a href="../../ref/Tags/countrySelector.html">countrySelector</a>
                             </div>

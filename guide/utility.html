@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>3 Utility Clases 0.2.6</title>
+    <title>3 Utility Clases 1.0</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -49,7 +49,7 @@ function addJsClass() {
         
         
     </div>
-    <p>An advanced country selector in your grails application.</p>
+    <p>Advanced country selector for forms.</p>
 </div>
 
 
@@ -74,7 +74,7 @@ function addJsClass() {
 
                     <p><strong>Authors:</strong> Matouš Kučera</p>
 
-                    <p><strong>Version:</strong> 0.2.6</p>
+                    <p><strong>Version:</strong> 1.0</p>
 
                     
                 </div>
@@ -97,7 +97,7 @@ function addJsClass() {
 
 <h2 id="countrySelectorService">3.1 CountrySelectorService</h2>
 <strong class="bold">allowedCountryCodes()</strong>
-This method allows to get all allowed country codes. It can be used for constraints in domain class.<p class="paragraph"/>Example domain class Address.groovy
+This method allows to get all allowed country codes. The general usage is for domain class constraints.<p class="paragraph"/>Example domain class Address.groovy
 <div class="code"><pre>class Address &#123;
    def countrySelectorService<p class="paragraph"/>   <span class="java&#45;object">String</span> country<p class="paragraph"/>   <span class="java&#45;keyword">static</span> constraints = &#123;
       country(nullable: <span class="java&#45;keyword">false</span>, blank: <span class="java&#45;keyword">false</span>, validator: &#123;val, obj &#45;&#62;
@@ -140,6 +140,9 @@ The Address class is usually an embedded class placed in groovy/src for a certai
                     
                     <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Tags</h1><div class="menu-sub">
                         
+                            
+                            <div class="menu-item"><a href="../ref/Tags/country.html">country</a>
+                            </div>
                             
                             <div class="menu-item"><a href="../ref/Tags/countrySelector.html">countrySelector</a>
                             </div>

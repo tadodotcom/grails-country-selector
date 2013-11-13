@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>1 Introduction 0.2.6</title>
+    <title>1 Introduction 1.0</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -49,7 +49,7 @@ function addJsClass() {
         
         
     </div>
-    <p>An advanced country selector in your grails application.</p>
+    <p>Advanced country selector for forms.</p>
 </div>
 
 
@@ -72,7 +72,7 @@ function addJsClass() {
 
                     <p><strong>Authors:</strong> Matouš Kučera</p>
 
-                    <p><strong>Version:</strong> 0.2.6</p>
+                    <p><strong>Version:</strong> 1.0</p>
 
                     
                 </div>
@@ -96,25 +96,22 @@ function addJsClass() {
                 
 
 <h1 id="introduction">1 Introduction</h1>
-This plugin provides advanced country selector for Grails. It uses JavaScript autocomplete to give the user right help. The autocomplete help takes into account country name alternatives and different relevance for different countries (see <a href="../guide/single.html#countries_i18n" class="guide">Countries i18n</a> chapter). Moreover, it allows i18n localization of country names, alternatives and also relevancy.<p class="paragraph"/>The plugin is based on JavaScript implementation of country selector of <a href="http://baymard.com/" target="blank">Baymard Institute</a>, see project Github <a href="https://github.com/JamieAppleseed/selectToAutocomplete" target="blank"></a>.
+This plugin provides advanced country selector for Grails. It is suitable for all forms where the user needs to put a country, i.e. address form. Contrary to traditional html select with a huge list of countries, it serves a user normal input box where the user can type his country. When he starts typing it suggest him possible countries he could fill in.<p class="paragraph"/>It uses JavaScript autocomplete to give the user right help. The autocomplete takes into account country name alternatives and different relevance for different countries (see <a href="../guide/single.html#countries_i18n" class="guide">Countries i18n</a> chapter). Moreover, it allows i18n localization of country names, alternatives and also relevancy.<p class="paragraph"/>The plugin is based on JavaScript implementation of country selector of <a href="http://baymard.com/" target="blank">Baymard Institute</a>, see project Github <a href="https://github.com/JamieAppleseed/selectToAutocomplete" target="blank"></a>.
 
 
 <h2 id="changes">1.1 Change Log</h2>
-<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Date</th><th>Version</th><th>Notes</th></tr><tr class="table-odd"><td>2013-07-03</td><td>0.2.6</td><td>Improved dependencies. Resource plugin is not required by default.</td></tr><tr class="table-even"><td>2013-07-02</td><td>0.2</td><td>Bug fixes. German translation.</td></tr><tr class="table-odd"><td>2013-07-01</td><td>0.1</td><td>Smart country selector - &#60;cs:countrySelector /&#62; tag. jQuery autocomplete implementation. Twitter Bootstrap autocomplete implementation. Country setup in i18n.</td></tr></table>
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Date</th><th>Version</th><th>Notes</th></tr><tr class="table-odd"><td>2013-11-13</td><td>1.0</td><td>Release of 1.0. TagLib for display of country name based on its code. Locale attribute for tagLibs.</td></tr><tr class="table-even"><td>2013-07-03</td><td>0.2.6</td><td>Improved dependencies. Resource plugin is not required by default.</td></tr><tr class="table-odd"><td>2013-07-02</td><td>0.2</td><td>Bug fixes. German translation.</td></tr><tr class="table-even"><td>2013-07-01</td><td>0.1</td><td>Smart country selector - &#60;cs:countrySelector /&#62; tag. jQuery autocomplete implementation. Twitter Bootstrap autocomplete implementation. Country setup in i18n.</td></tr></table>
 
 
 <h2 id="roadmap">1.2 Roadmap</h2>
 <ul class="star">
 <li>Cashing of parsed i18n country codes</li>
 <li>Translations to CZ</li>
-<li>Tag for resolving the country name based on country code, plugin settings and locale</li>
 </ul><p class="paragraph"/>
 
 
 <h2 id="knownIssues">1.3 Known Issues</h2>
-<ul class="star">
-<li>Grails 2.2.2 - <a href="http://jira.grails.org/browse/GRAILS-10058" target="blank">Plugin i18n Resources Problem</a> causes that plugin i18n configuration is not loaded.</li>
-</ul><p class="paragraph"/>
+
 
 
                 <div style="clear:both;margin-top:15px;"></div>
@@ -134,6 +131,9 @@ This plugin provides advanced country selector for Grails. It uses JavaScript au
                     
                     <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Tags</h1><div class="menu-sub">
                         
+                            
+                            <div class="menu-item"><a href="../ref/Tags/country.html">country</a>
+                            </div>
                             
                             <div class="menu-item"><a href="../ref/Tags/countrySelector.html">countrySelector</a>
                             </div>
