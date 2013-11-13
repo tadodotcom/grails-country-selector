@@ -1,6 +1,5 @@
 package org.grails.plugins.countrySelector
 
-import org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
 
 /**
@@ -21,7 +20,8 @@ class CountrySelectorTagLib {
     *
     * @attr name  Unique name of the country selector
     * @attr value Optional. Value of the selected country - country code
-    * @attr
+    * @attr placeholder Optional. The placeholder for the input
+    * @attr locale Optional. Locale which should be used for country names. The request locale are taken by default.
     */
    def countrySelector = { attrs ->
       if (!attrs.name)
@@ -29,6 +29,7 @@ class CountrySelectorTagLib {
 
       def value = attrs.remove('value')
       def placeholder = attrs.remove('placeholder')
+      def locale = attrs.remove('locale') ?: RCU.getLocale(request)
       def countryMissing = value ? true : false
 
       // load required resource
@@ -46,7 +47,7 @@ class CountrySelectorTagLib {
       out << "\n"
 
       // build the options
-      def countrySelectorConfig = countrySelectorService.resolveCountries(RCU.getLocale(request))
+      def countrySelectorConfig = countrySelectorService.resolveCountries(locale)
       if(countrySelectorConfig.countries) {
          countrySelectorConfig.countries.each {entryName, countryProperties ->
             out << "<option value='$entryName' "
@@ -84,6 +85,20 @@ class CountrySelectorTagLib {
 
       // close tag
       out << '</select>'
+   }
+
+   /**
+    * Country displays the country name for given country code. It doesn't check if the country code is valid, if not
+    * it prints the given code.
+    *
+    * @attr code Unique country code
+    * @attr locale Optional. Locale which should be used for country names. The request locale are taken by default.
+    */
+   def country = { attrs ->
+      def countryCode = attrs.remove('code') ?: RCU.getLocale(request)
+      def locale = attrs.remove('locale') ?: RCU.getLocale(request)
+
+      out << g.message(code: "org.grails.plugin.countrySelector.default.$countryCode", default: countryCode, locale: locale)
    }
 
    /**
