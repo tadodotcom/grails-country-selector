@@ -1,7 +1,9 @@
 The plugin is dependent on i18n Grails plugin and allows to set all language/location properties needed for country selector. Therefore, simply changing the user locale can change the country selector behavior.
 
 It allows to set-up following properties for each country:
-# *Country Code* - Plugin uses [ISO 3166-1 alpha-3|http://en.wikipedia.org/wiki/ISO_3166-1] codes for countries but you can use set your own. Country codes are the values returned when the user submit the country selector. They could be easily mapped to domain class property. Examples: _GBR_, _DEU_, etc.
+# *Country Code* - Plugin uses [ISO 3166-1 alpha-3|http://en.wikipedia.org/wiki/ISO_3166-1] codes for countries but you can set your own. Country codes are the values returned when the user submit the country selector. They could be easily mapped to domain class property. Examples: _GBR_, _DEU_, etc.
 # *Country Name* - It is the actual country name the user sees in autocomplete. Examples: _United Kingdom_, _Germany_, etc.
-# *Country Alternatives* - Alternative strings which should be used for autocomplete. When the user starts to type an alternative he should receive a proper country name. Examples: _GB Great Britain England UK Wales Scotland Northern Ireland_ for United Kingdom, _DE Bundesrepublik Deutschland_ for Germany.
+# *Country Alternatives* - Alternative strings which should be used for autocomplete. When the user starts typing an alternative he should receive a proper country name. Examples: _GB Great Britain England UK Wales Scotland Northern Ireland_ for United Kingdom, _DE Bundesrepublik Deutschland_ for Germany.
 # *Relevancy* - The relevancy specifies the order of results in autocomplete. Country selector sorts the countries by their relevancy first (higher relevancy ~ higher position in autocomplete) and than alphabetically. Examples: United States relevancy _3.5_, United Kingdom relevancy _2.5_
+
+Having these properties in i18n allows to set different values for different locale. It allows for example to set a different relevancy for different locale, i.e. Sweden would have higher relevancy than Switzerland in Sweden locale but this would be vice versa for Switzerland locale.

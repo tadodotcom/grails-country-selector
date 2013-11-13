@@ -10,9 +10,9 @@ org.grails.plugin.countrySelector.DNK.alternatives=DK Danmark
 org.grails.plugin.countrySelector.DNK.relevancy=1.5
 {code}
 
-The country code is the last part of the first property key, the value specifies the country name. Alternatives are comma separated alternative names. Similarly relevancy is used for country position in the country selector.
+The country code is the last part of the first property key, the value specifies the country name. Alternatives are space separated names. Similarly, relevancy is used for country position in the country selector.
 
-By default custom property files are merged with the plugin specified. You can set all country specifiactions (name, alternatives, relevancy) or just few of them. The custom specification has higher priority during merging. Similarly, new countries could be defined if it's needed.
+By default custom property files are merged with the plugin specified. You can set all country specifiactions (name, alternatives, relevancy) or just few of them. The custom specification has higher priority during merging. New countries could be defined if it is required.
 
 You can also decide to use your custom i18n settings by default (for example, this can be used when you would like to define custom country codes, or just reduce the number of possible countries). Set following in Config.groovy
 {code}

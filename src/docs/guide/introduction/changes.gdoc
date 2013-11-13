@@ -1,5 +1,6 @@
 {table}
 Date | Version | Notes
+2013-11-13 | 1.0 | Release of 1.0. TagLib for display of country name based on its code. Locale attribute for tagLibs.
 2013-07-03 | 0.2.6 | Improved dependencies. Resource plugin is not required by default.
 2013-07-02 | 0.2 | Bug fixes. German translation.
 2013-07-01 | 0.1 | Smart country selector - <cs:countrySelector /> tag. jQuery autocomplete implementation. Twitter Bootstrap autocomplete implementation. Country setup in i18n.

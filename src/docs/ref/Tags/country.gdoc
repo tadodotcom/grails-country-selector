@@ -1,0 +1,8 @@
+h1. cs:country Tag
+
+This tags allows to render the country name based on given country code.
+
+h2. Attributes
+
+* code - Country code in [ISO 3166-1 alpha-3|http://en.wikipedia.org/wiki/ISO_3166-1] format.
+* locale - Optional. Locale which should be used for country names. Current locale are taken by default.

@@ -21,7 +21,7 @@ class CountrySelectorTagLib {
     * @attr name  Unique name of the country selector
     * @attr value Optional. Value of the selected country - country code
     * @attr placeholder Optional. The placeholder for the input
-    * @attr locale Optional. Locale which should be used for country names. The request locale are taken by default.
+    * @attr locale Optional. Locale which should be used for country names. Current locale are taken by default.
     */
    def countrySelector = { attrs ->
       if (!attrs.name)

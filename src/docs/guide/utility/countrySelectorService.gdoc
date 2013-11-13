@@ -1,5 +1,5 @@
 *allowedCountryCodes()*
-This method allows to get all allowed country codes. It can be used for constraints in domain class.
+This method allows to get all allowed country codes. The general usage is for domain class constraints.
 
 Example domain class Address.groovy
 {code}
