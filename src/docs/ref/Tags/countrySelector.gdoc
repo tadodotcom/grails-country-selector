@@ -7,3 +7,4 @@ h2. Attributes
 * name - Unique name of the country selector
 * value - Optional. Value of the selected country - country code
 * locale - Optional. Locale which should be used for country names. Current locale are taken by default.
+* placeholder - Optional. The placeholder which should be used for the result input.
