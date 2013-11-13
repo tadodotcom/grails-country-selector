@@ -1,1 +1,1 @@
-JavaScript autocomplete engine is an important part of this plugin. It allows the user to see the recommended countries while he is typing. By default, the [jQuery autocomplete|jQueryAutocomplete] is used by the plugin.
+JavaScript autocomplete engine is an important part of this plugin. It allows the user to see the recommended countries while he is typing. By default, the [jQuery autocomplete|guide:jQueryAutocomplete] is used by the plugin.
