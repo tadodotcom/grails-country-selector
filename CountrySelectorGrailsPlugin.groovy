@@ -11,7 +11,7 @@ class CountrySelectorGrailsPlugin {
 
    def documentation = "http://tadodotcom.github.io/grails-country-selector"
 
-   def license = "GPL3"
+   def license = "BSD"
 
    def organization = [name: "tado GmbH", url: "http://tado.com/"]
 
